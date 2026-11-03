@@ -1,0 +1,445 @@
+/* 晨光校园 · 深蓝治理 — 仅作用于叙事首页 */
+.welcome {
+  --hp-ink: #0f1c28;
+  --hp-ink-muted: #4a5d6e;
+  --hp-paper: #f3f6f8;
+  --hp-surface: #ffffff;
+  --hp-brand: #16384f;
+  --hp-brand-mid: #1e4d6b;
+  --hp-accent: #2a6f7a;
+  --hp-accent-soft: #d9e8ec;
+  --hp-warm: #b8893a;
+  --hp-hero-veil: linear-gradient(
+    105deg,
+    rgba(15, 28, 40, 0.72) 0%,
+    rgba(15, 28, 40, 0.35) 48%,
+    rgba(15, 28, 40, 0.15) 100%
+  );
+  --font-display: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', serif;
+  --font-body: 'Noto Sans SC', 'Source Han Sans SC', 'PingFang SC', 'Microsoft YaHei',
+    sans-serif;
+
+  min-height: 100vh;
+  background: var(--hp-paper);
+  color: var(--hp-ink);
+  font-family: var(--font-body);
+}
+
+.welcome a {
+  text-decoration: none;
+}
+
+/* —— 顶栏 —— */
+.welcome-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.welcome-top-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  color: inherit;
+  opacity: 0.9;
+}
+
+.welcome-top-brand:hover {
+  opacity: 1;
+}
+
+.welcome-top-role {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.welcome-top-role select {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 4px;
+  background: rgba(15, 28, 40, 0.35);
+  color: #f3f6f8;
+  max-width: 220px;
+}
+
+.welcome-top-role select option {
+  color: var(--hp-ink);
+  background: #fff;
+}
+
+/* —— 首屏 —— */
+.welcome-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.welcome-hero-media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 40%;
+  transform: scale(1.04);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.welcome.is-entered .welcome-hero-media {
+  transform: scale(1);
+}
+
+.welcome-hero-veil {
+  position: absolute;
+  inset: 0;
+  background: var(--hp-hero-veil);
+  pointer-events: none;
+}
+
+.welcome-hero-copy {
+  position: relative;
+  z-index: 2;
+  width: min(720px, 100%);
+  padding: 0 28px 72px;
+  color: #f7fafb;
+}
+
+.welcome-brand-mark {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3.6rem, 9vw, 6.5rem);
+  line-height: 1.05;
+  letter-spacing: 0.12em;
+  color: #fff;
+}
+
+.welcome-brand-sub {
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: rgba(243, 246, 248, 0.78);
+  max-width: 28em;
+  line-height: 1.55;
+}
+
+.welcome-headline {
+  margin: 28px 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.96);
+  max-width: 18em;
+}
+
+.welcome-support {
+  margin: 14px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(243, 246, 248, 0.82);
+  max-width: 32em;
+}
+
+.welcome-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.welcome-cta-hint {
+  margin: 12px 0 0;
+  font-size: 0.78rem;
+  color: rgba(243, 246, 248, 0.62);
+}
+
+/* —— CTA —— */
+.welcome-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 12px 22px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.25s ease,
+    box-shadow 0.2s ease,
+    transform 0.1s ease,
+    opacity 0.2s ease;
+}
+
+.welcome-btn-primary {
+  background: var(--hp-accent);
+  color: #fff;
+  border-bottom: 1px solid transparent;
+  box-shadow: inset 0 -1px 0 transparent;
+}
+
+.welcome-btn-primary:hover {
+  background: #34828e;
+  border-bottom-color: var(--hp-warm);
+  box-shadow: inset 0 -2px 0 var(--hp-warm);
+  text-decoration: none;
+}
+
+.welcome-btn-primary:active {
+  transform: translateY(1px);
+  transition-duration: 0.1s;
+}
+
+.welcome-btn-secondary {
+  background: transparent;
+  color: #f3f6f8;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.welcome-btn-secondary:hover:not(:disabled):not(.is-disabled) {
+  border-color: var(--hp-warm);
+  color: #fff;
+  text-decoration: none;
+}
+
+.welcome-btn-secondary.is-disabled,
+.welcome-btn-secondary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.welcome-start .welcome-btn-primary {
+  margin-top: 8px;
+}
+
+/* —— 入场错落 —— */
+.welcome-anim {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--di, 0) * 80ms + 120ms);
+}
+
+.welcome-anim[data-i='0'] {
+  --di: 0;
+}
+.welcome-anim[data-i='1'] {
+  --di: 1;
+}
+.welcome-anim[data-i='2'] {
+  --di: 2;
+}
+.welcome-anim[data-i='3'] {
+  --di: 3;
+}
+.welcome-anim[data-i='4'] {
+  --di: 4;
+}
+.welcome-anim[data-i='5'] {
+  --di: 5;
+}
+
+.welcome.is-entered .welcome-anim {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.welcome.is-reduced .welcome-hero-media {
+  transform: none;
+  transition: none;
+}
+
+.welcome.is-reduced .welcome-anim {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* —— 分区 —— */
+.welcome-section {
+  padding: 72px 28px;
+  background: var(--hp-paper);
+}
+
+.welcome-section-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.welcome-section h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 700;
+  color: var(--hp-ink);
+  letter-spacing: 0.04em;
+}
+
+.welcome-section-lead {
+  margin: 12px 0 0;
+  color: var(--hp-ink-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  max-width: 36em;
+}
+
+/* —— 三道闭环流程带 —— */
+.welcome-flow {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.welcome-flow > li {
+  display: flex;
+  align-items: center;
+  flex: 1 1 180px;
+  min-width: 0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+  transition-delay: calc(var(--i, 0) * 140ms + 80ms);
+}
+
+.welcome-flow-section.is-in .welcome-flow > li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.welcome.is-reduced .welcome-flow > li {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.welcome-flow-node {
+  flex: 1;
+  text-align: left;
+  font: inherit;
+  background: transparent;
+  border: none;
+  border-top: 2px solid var(--hp-brand);
+  padding: 18px 8px 8px 0;
+  cursor: pointer;
+  color: var(--hp-ink);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.welcome-flow-node:hover {
+  border-top-color: var(--hp-warm);
+  color: var(--hp-brand-mid);
+}
+
+.welcome-flow-index {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--hp-accent);
+  margin-bottom: 8px;
+}
+
+.welcome-flow-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.welcome-flow-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--hp-ink-muted);
+}
+
+.welcome-flow-rail {
+  width: 28px;
+  height: 2px;
+  margin: 0 4px;
+  align-self: flex-start;
+  margin-top: 0;
+  background: linear-gradient(90deg, var(--hp-brand-mid), var(--hp-accent-soft));
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+
+.welcome-start {
+  padding-top: 24px;
+  padding-bottom: 56px;
+  border-top: 1px solid #e0e7ec;
+}
+
+/* —— 页脚 —— */
+.welcome-footer {
+  padding: 28px;
+  background: var(--hp-brand);
+  color: rgba(243, 246, 248, 0.78);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.welcome-footer p {
+  margin: 0;
+}
+
+.welcome-footer p + p {
+  margin-top: 4px;
+  opacity: 0.75;
+}
+
+@media (max-width: 720px) {
+  .welcome-top {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .welcome-hero-copy {
+    padding: 0 16px 56px;
+  }
+
+  .welcome-section {
+    padding: 48px 16px;
+  }
+
+  .welcome-flow-rail {
+    display: none;
+  }
+
+  .welcome-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .welcome-btn {
+    width: 100%;
+  }
+}

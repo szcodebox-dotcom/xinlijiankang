@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useRole } from '../context/RoleContext'
 import type { RoleCode } from '../types'
 
@@ -41,10 +41,10 @@ export function Layout() {
   return (
     <div className="app-shell">
       <aside className="sidebar">
-        <div className="brand">
+        <Link to="/welcome" className="brand" title="返回叙事首页">
           <p className="brand-name">心联</p>
           <p className="brand-sub">区心理健康监测平台<br />演练版</p>
-        </div>
+        </Link>
         <nav className="nav">
           {NAV.map((item) => {
             const allowed = item.roles.includes(user.roleCode)
